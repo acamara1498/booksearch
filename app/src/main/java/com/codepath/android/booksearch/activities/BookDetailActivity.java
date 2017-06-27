@@ -1,8 +1,8 @@
 package com.codepath.android.booksearch.activities;
 
+import android.app.ActionBar;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,6 +21,8 @@ public class BookDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(android.R.style.Theme_DeviceDefault_Light_DarkActionBar);
+
         setContentView(R.layout.activity_book_detail);
         // Fetch views
         ivBookCover = (ImageView) findViewById(R.id.ivBookCover);
@@ -37,8 +39,8 @@ public class BookDetailActivity extends AppCompatActivity {
                 .placeholder(R.drawable.ic_nocover)
                 .into(ivBookCover);
 
-        ActionBar actionBar = getSupportActionBar(); // or getActionBar();
-        getSupportActionBar().setTitle(tvTitle.getText().toString()); // set the top title
+        ActionBar actionBar = getActionBar();
+        getActionBar().setTitle(tvTitle.getText().toString()); // set the top title
     }
 
 
