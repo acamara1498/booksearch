@@ -46,7 +46,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
 
         @Override
         public void onClick(View v) {
-            Book dataToSend = new Book();
+            Book dataToSend = mBooks.get(getAdapterPosition());
             Intent intent = new Intent(context, BookDetailActivity.class);
             intent.putExtra(Book.class.getName(), dataToSend);
             mContext.startActivity(intent);

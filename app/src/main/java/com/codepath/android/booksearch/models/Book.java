@@ -10,11 +10,11 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-@Parcel
+
 public class Book implements Parcelable {
-    private String openLibraryId;
-    private String author;
-    private String title;
+    String openLibraryId;
+    String author;
+    String title;
 
     protected Book(Parcel in) {
         openLibraryId = in.readString();
@@ -78,7 +78,7 @@ public class Book implements Parcelable {
     }
 
     // Return comma separated author list when there is more than one author
-    private static String getAuthor(final JSONObject jsonObject) {
+    public static String getAuthor(final JSONObject jsonObject) {
         try {
             final JSONArray authors = jsonObject.getJSONArray("author_name");
             int numAuthors = authors.length();
